@@ -10,6 +10,9 @@
 		"type": "git",
 		"url": "https://github.com/HenryKeen/FtpSync"
 	},
+	"bin": {
+		"ftpsync": "./main.js"
+	},
 	"keywords": [
 		"ftp",
 		"automation",
