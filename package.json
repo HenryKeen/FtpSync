@@ -1,0 +1,26 @@
+{
+	"name": "FtpSync",
+	"version": "0.0.1",
+	"description": "An automation tool for deploying via FTP",
+	"author": "Henry Keen <henry_keen@hotmail.com>",
+	"contributors": [],
+	"scripts": {},
+	"main": "FileUploader.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HenryKeen/FtpSync"
+	},
+	"keywords": [
+		"ftp",
+		"automation",
+		"deploy"
+	],
+	"dependencies": {
+		"jsftp": "latest",
+		"globule": "latest"
+	},
+	"preferGlobal": false,
+	"private": true,
+	"analyze": true,
+	"licence": "GPL-2.0"
+}
