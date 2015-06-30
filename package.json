@@ -22,7 +22,7 @@
 		"jsftp": "latest",
 		"globule": "latest"
 	},
-	"preferGlobal": false,
+	"preferGlobal": true,
 	"private": true,
 	"analyze": true,
 	"licence": "GPL-2.0"
