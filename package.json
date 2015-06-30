@@ -11,7 +11,7 @@
 		"url": "https://github.com/HenryKeen/FtpSync"
 	},
 	"bin": {
-		"ftpsync": "./main.js"
+		"ftpsync": "bin/FtpSync"
 	},
 	"keywords": [
 		"ftp",
