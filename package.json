@@ -23,7 +23,7 @@
 		"globule": "latest"
 	},
 	"preferGlobal": true,
-	"private": true,
+	"private": false,
 	"analyze": true,
 	"licence": "GPL-2.0"
 }
