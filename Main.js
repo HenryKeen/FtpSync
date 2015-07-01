@@ -1,7 +1,7 @@
 var fs = require('fs');
 
-var FileUploader = require("./FileUploader.js")
-var BatchPreparer = require("./BatchPreparer.js")
+var FileUploader = require("./FileUploader.js");
+var BatchPreparer = require("./BatchPreparer.js");
 
 
 var batchPreparer = new BatchPreparer();
@@ -35,7 +35,20 @@ var uploadBatchesRecursive = function(uploader, i){
 };
 
 var upload = function(configFile){
-	var config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+	var config;
+
+	try
+	{
+		config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+	}
+	catch(e)
+	{
+		if(e.errno == 34){
+			console.log('Cannot find file ftp_config.json, exiting...');
+			process.exit();
+		}
+		throw e;
+	}
 
 	batchPreparer.prepare(config);
 
