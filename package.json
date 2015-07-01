@@ -1,5 +1,5 @@
 {
-	"name": "ftpsync",
+	"name": "auto-ftp",
 	"version": "0.0.1",
 	"description": "An automation tool for deploying via FTP",
 	"author": "Henry Keen <henry_keen@hotmail.com>",
@@ -8,10 +8,10 @@
 	"main": "FileUploader.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/HenryKeen/FtpSync"
+		"url": "https://github.com/HenryKeen/auto-ftp"
 	},
 	"bin": {
-		"ftpsync": "bin/FtpSync"
+		"auto-ftp": "bin/auto-ftp"
 	},
 	"keywords": [
 		"ftp",
