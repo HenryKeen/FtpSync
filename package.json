@@ -15,8 +15,10 @@
 	},
 	"keywords": [
 		"ftp",
+		"deploy",
+		"ftp deploy",
 		"automation",
-		"deploy"
+		"deployment"
 	],
 	"dependencies": {
 		"jsftp": "latest",
