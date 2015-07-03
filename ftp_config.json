@@ -1,0 +1,14 @@
+{
+	"ftpConfig" : {
+	  "host": "speedtest.tele2.net",
+	  "username": "",
+	  "password": ""
+	},
+	"ftpBatches": [{
+		"localRoot": "TestData",
+		"remoteRoot": "/upload",
+		"match": ["**"]
+	}],
+	"testMode": false,
+	"debugMode": false
+}
