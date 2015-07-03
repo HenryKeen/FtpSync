@@ -3,6 +3,16 @@ var fs = require('fs');
 ConfigFileLoader = function(){
 	var self = this;
 
+	var throwFieldNotFound = function(fieldName){
+		throw "No value found for '" + fieldName + "' in ftp_config.json";
+	};
+
+	var validateRequiredKey = function(obj, key){
+		if(obj[key] === undefined){
+			throwFieldNotFound(key);
+		}
+	};
+
 	self.load = function(configFile){
 		var config;
 
@@ -19,6 +29,10 @@ ConfigFileLoader = function(){
 			throw e;
 		}
 
+		validateRequiredKey(config, 'ftpConfig');
+		validateRequiredKey(config.ftpConfig, 'host');
+		validateRequiredKey(config, 'ftpBatches');
+		
 		return config;
 	};
 };
