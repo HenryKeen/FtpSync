@@ -120,8 +120,15 @@ var FileUploader = function(options){
 		}
 	};
 
+	var authenticate = function(callback){
+		if(options.ftpConfig.username)
+			Ftp.auth(options.ftpConfig.username, options.ftpConfig.password, callback);
+		else
+			callback();
+	};
+
 	self.uploadFiles = function(fileUploads, callback){
-		Ftp.auth(options.ftpConfig.username, options.ftpConfig.password, function(){
+		authenticate(function(){
 			files = fileUploads;
 			uploadFileAtIndex(0, callback);
 		});
