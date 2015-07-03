@@ -58,6 +58,9 @@ var BatchPreparer = function(){
 
 	self.prepare = function(config){
 		config.ftpBatches.forEach(setFilePaths);
+
+		if(config.debugMode === true)
+			logBatches(config.ftpBatches);
 	};
 };
 
