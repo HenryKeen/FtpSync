@@ -1,6 +1,4 @@
-var fs = require('fs');
-
-ConfigFileLoader = function(){
+ConfigFileLoader = function(fs){
 	var self = this;
 
 	var throwFieldNotFound = function(fieldName){
@@ -23,8 +21,8 @@ ConfigFileLoader = function(){
 		catch(e)
 		{
 			if(e.errno == 34){
-				console.log('Cannot find file ftp_config.json, exiting...');
-				process.exit();
+				console.log('Cannot find file ftp_config.json');
+				return;
 			}
 			throw e;
 		}

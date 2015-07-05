@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 var FileUploader = require("./FileUploader.js");
 var BatchPreparer = require("./BatchPreparer.js");
 var ConfigFileLoader = require('./ConfigFileLoader.js')
@@ -34,7 +36,11 @@ var uploadBatchesRecursive = function(uploader, i){
 };
 
 var upload = function(){
-	var config = new ConfigFileLoader().load('ftp_config.json');
+	var config = new ConfigFileLoader(fs).load('ftp_config.json');
+
+	if(!config){
+		return;
+	}
 
 	batchPreparer.prepare(config);
 
