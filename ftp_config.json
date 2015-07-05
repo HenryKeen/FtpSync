@@ -5,7 +5,7 @@
 	  "password": ""
 	},
 	"ftpBatches": [{
-		"localRoot": "TestData",
+		"localRoot": "test_data",
 		"remoteRoot": "/upload",
 		"match": ["**"]
 	}],
