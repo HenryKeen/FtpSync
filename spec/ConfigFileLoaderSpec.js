@@ -38,8 +38,7 @@ describe('When loading the config file', function(){
 				});
 
 				//Act
-				try 
-				{
+				try {
 					configLoader.load('file_config.json');
 				}
 				catch(e) {
@@ -48,7 +47,7 @@ describe('When loading the config file', function(){
 			});
 
 			it('throws an error promting the user that the field is missing', function(){
-				expect(exception).not.toBe(null);
+				expect(exception).not.toBe(undefined);
 				expect(exception).toBe("No value found for '" + fieldName + "' in ftp_config.json");
 			});
 		};
