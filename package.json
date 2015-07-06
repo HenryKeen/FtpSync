@@ -27,5 +27,5 @@
 	"preferGlobal": true,
 	"private": false,
 	"analyze": true,
-	"licence": "GPL-2.0"
+	"licence": "MIT"
 }
