@@ -5,7 +5,7 @@
 	"author": "Henry Keen <henry_keen@hotmail.com>",
 	"contributors": [],
 	"scripts": {},
-	"main": "FileUploader.js",
+	"main": "main.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/HenryKeen/auto-ftp"
@@ -22,7 +22,8 @@
 	],
 	"dependencies": {
 		"jsftp": "latest",
-		"globule": "latest"
+		"globule": "latest",
+		"commander": "latest"
 	},
 	"preferGlobal": true,
 	"private": false,

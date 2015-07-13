@@ -56,6 +56,20 @@ var BatchPreparer = function(){
 		return ftpBatch;
 	};
 
+	var logBatches = function(batches){
+		console.log("Found files:");
+		
+		batches.forEach(function(ftpBatch){
+			ftpBatch.files.forEach(function(file){
+				console.log(file.sourcePath);
+			});
+
+			ftpBatch.files.forEach(function(file){
+				console.log(file.destinationPath);
+			});
+		});
+	};
+
 	self.prepare = function(config){
 		config.ftpBatches.forEach(setFilePaths);
 

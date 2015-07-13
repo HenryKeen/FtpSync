@@ -1,5 +1,6 @@
 var path = require('path');
 var JSFtp = require("jsftp");
+var FtpStub = require('./FtpStub.js');
 
 
 var makeUnixPath = function(filePath) {

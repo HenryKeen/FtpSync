@@ -2,26 +2,14 @@ var fs = require('fs');
 
 var FileUploader = require("./FileUploader.js");
 var BatchPreparer = require("./BatchPreparer.js");
-var ConfigFileLoader = require('./ConfigFileLoader.js')
+var ConfigFileLoader = require('./ConfigFileLoader.js');
 
 var FileUploadController = function(){
 	var self = this;
 	
 	var batchPreparer = new BatchPreparer();
 
-	var logBatches = function(batches){
-		console.log("Found files:");
-		
-		batches.forEach(function(ftpBatch){
-			ftpBatch.files.forEach(function(file){
-				console.log(file.sourcePath);
-			});
-
-			ftpBatch.files.forEach(function(file){
-				console.log(file.destinationPath);
-			});
-		});
-	};
+	
 
 	var batches = [];
 
@@ -37,12 +25,15 @@ var FileUploadController = function(){
 		});
 	};
 
-	self.upload = function(){
+	self.upload = function(isTest, isDebug){
 		var config = new ConfigFileLoader(fs).load('ftp_config.json');
 
 		if(!config){
 			return;
 		}
+
+		config.testMode = isTest === true;
+		config.debugMode = isDebug === true;
 
 		batchPreparer.prepare(config);
 

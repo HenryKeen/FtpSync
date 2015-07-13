@@ -8,7 +8,5 @@
 		"localRoot": "test_data",
 		"remoteRoot": "/upload",
 		"match": ["**"]
-	}],
-	"testMode": false,
-	"debugMode": false
+	}]
 }
