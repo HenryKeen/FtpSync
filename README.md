@@ -12,9 +12,36 @@ Installation
 Configuration
 -------------
 
-Create ftp_config.json file.
+Create ftp_config.json file, specify host, credentials, and files to upload.
 
-To copy all files in the upload apart from config.json to the "/website-root" directory, your config would look like this...
+```json
+{
+	"ftpConfig" : {
+	  "host": "yourhost.com",
+	  "username": "yourusername",
+	  "password": "yourpassword"
+	},
+	"ftpBatches": [{
+		"localRoot": "",
+		"remoteRoot": "",
+		"match": ["**", "!package.json", "!node_modules"]
+	}]
+}
+```
+
+
+Run it
+------
+
+``auto-ftp`` to start transfer.
+
+``auto-ftp -h`` for help.
+
+
+Examples
+--------
+
+To copy all files in the upload apart from package.json and node_modules to the "/website-root" directory...
 
 ```json
 {
@@ -26,10 +53,8 @@ To copy all files in the upload apart from config.json to the "/website-root" di
 	"ftpBatches": [{
 		"localRoot": "",
 		"remoteRoot": "/website-root",
-		"match": ["**", "!config.json"]
-	}],
-	"testMode": false,
-	"debugMode": false
+		"match": ["**", "!package.json", "node_modules"]
+	}]
 }
 ```
 
@@ -51,13 +76,6 @@ To copy all files from the "web" directory and the "config.json" file from the "
 		"localRoot": "",
 		"remoteRoot": "/website-root",
 		"match": ["config/production/config.json"]
-	}],
-	"testMode": false,
-	"debugMode": false
+	}]
 }
 ```
-
-Run it
-------
-
-``auto-ftp``
