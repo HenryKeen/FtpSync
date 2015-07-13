@@ -12,14 +12,16 @@ Installation
 Configuration
 -------------
 
-Create ftp_config.json file, specify host, credentials, and files to upload.
+``auto-ftp --init``
+
+Generates the ftp_config.json file. Fill in the host, username, and password fields...
 
 ```json
 {
 	"ftpConfig" : {
-	  "host": "yourhost.com",
-	  "username": "yourusername",
-	  "password": "yourpassword"
+	  "host": "",
+	  "username": "",
+	  "password": ""
 	},
 	"ftpBatches": [{
 		"localRoot": "",
@@ -28,7 +30,6 @@ Create ftp_config.json file, specify host, credentials, and files to upload.
 	}]
 }
 ```
-
 
 Run it
 ------
